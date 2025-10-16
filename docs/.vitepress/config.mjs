@@ -17,6 +17,30 @@ const vitePressOptions = {
   lang: 'zhHans',
 
   themeConfig: {
+    socialLinks: [{
+    icon: "github",
+    link: "https://github.com/lnh2020/Learn"
+  }, ],
+
+  darkModeSwitchLabel: "暗黑模式",
+  lightModeSwitchTitle: "切换到浅色模式",
+  darkModeSwitchTitle: "切换到深色模式",
+
+  docFooter: {
+    prev: "上一页",
+    next: "下一页",
+  },
+
+  lastUpdated: {
+    text: "更新于",
+    formatOptions: {
+      dateStyle: "full",
+      timeStyle: "medium",
+    },
+  },
+  outlineTitle: "页面内容",
+  returnToTopLabel: "返回顶部",
+  sidebarMenuLabel: "菜单",
     // https://vitepress.dev/reference/default-theme-config
     nav: [{
         text: "首页",
@@ -49,37 +73,26 @@ const vitePressI18nOptions = {
   searchProvider: "local",
 };
 
-const vitePressSidebarOptions = {
-  socialLinks: [{
-    icon: "github",
-    link: "https://github.com/lnh2020/Learn"
-  }, ],
-
-  darkModeSwitchLabel: "暗黑模式",
-  lightModeSwitchTitle: "切换到浅色模式",
-  darkModeSwitchTitle: "切换到深色模式",
-
-  docFooter: {
-    prev: "上一页",
-    next: "下一页",
+const vitePressSidebarOptions = [
+  {
+    sortMenusOrderNumericallyFromTitle: true,
+    documentRootPath: '/docs/src',
+    removePrefixAfterOrdering: true,
+    prefixSeparator: '.',
+    scanStartPath: 'linux',
+    basePath: '/linux/',
+    resolvePath: '/linux/',
   },
-
-  lastUpdated: {
-    text: "更新于",
-    formatOptions: {
-      dateStyle: "full",
-      timeStyle: "medium",
-    },
+  {
+    sortMenusOrderNumericallyFromTitle: true,
+    documentRootPath: '/docs/src',
+    removePrefixAfterOrdering: true,
+    prefixSeparator: '.',
+    scanStartPath: 'typeScript',
+    basePath: '/typeScript/',
+    resolvePath: '/typeScript/',
   },
-  outlineTitle: "页面内容",
-  returnToTopLabel: "返回顶部",
-  sidebarMenuLabel: "菜单",
-  
-  sortMenusOrderNumericallyFromTitle: true,
-  documentRootPath: '/docs/src',
-  collapsed: false,
-  capitalizeFirst: true
-};
+];
 
 export default defineConfig(
   withSidebar(withI18n(vitePressOptions, vitePressI18nOptions), vitePressSidebarOptions)
