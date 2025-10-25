@@ -7,6 +7,8 @@ import {
 import {
   withSidebar
 } from 'vitepress-sidebar';
+
+
 // https://vitepress.dev/reference/site-config
 const vitePressOptions = {
   title: "学习笔记",
@@ -54,6 +56,13 @@ const vitePressOptions = {
         text: "Linux",
         link: "/linux/1.用户相关"
       },
+      {
+        text: '数据库',
+        items: [
+          { text: 'MySQL', link: '/DataBase/MySQL/1.MySQL的简介' },
+          { text: 'Redis', link: '/DataBase/Redis/1.Redis的简介' },
+        ]
+      }
     ],
 
     search: {
@@ -92,6 +101,16 @@ const vitePressSidebarOptions = [
     basePath: '/typeScript/',
     resolvePath: '/typeScript/',
   },
+  {
+    sortMenusOrderNumericallyFromTitle: true,
+    documentRootPath: '/docs/src',
+    removePrefixAfterOrdering: true,
+    prefixSeparator: '.',
+    scanStartPath: 'DataBase',
+    basePath: '/DataBase/',
+    resolvePath: '/DataBase/',
+  },
+  
 ];
 
 export default defineConfig(
